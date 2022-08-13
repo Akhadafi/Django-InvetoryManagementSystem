@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # my app
     "dashboard.apps.DashboardConfig",
+    "user.apps.UserConfig",
+    "crispy_forms",
 ]
 
 MIDDLEWARE = [
@@ -101,6 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+CRISPY_TEMPLATE_PACK = "Bootstrap4"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
