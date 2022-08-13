@@ -7,3 +7,11 @@ def index(request):
 
 def staff(request):
     return render(request, "dashboard/staff.html")
+
+
+def product(request):
+    return render(request, "dashboard/products.html")
+
+
+def order(request):
+    return render(request, "dashboard/order.html")
