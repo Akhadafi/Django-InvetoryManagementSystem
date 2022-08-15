@@ -3,10 +3,11 @@
 {% block title %}Index Page{% endblock %}
 <!--Content-->
 {% block content %}
+<!--  -->
+{% if user.is_authenticated and user.is_staff and user.is_superuser %}
 <!--Topside-->
 {% include 'partials/topside.html' %}
 <!--End Topside-->
-
 <!--Graphs-->
 <div class="container">
   <div class="row my-5">
@@ -109,5 +110,9 @@
   </div>
 </div>
 <!--End Graphs-->
+{% else %}
+<div class="container">{% include 'dashboard/staff_index.html' %}</div>
+{% endif %}
+<!--  -->
 {% endblock %}
 <!--End Content-->
