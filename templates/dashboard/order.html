@@ -1,50 +1,32 @@
 {% extends 'partials/base.html' %}
-<!--  -->
 {% block title %}Order Page{% endblock %}
-<!-- Content -->
-{% block content %}
-<!--Topside-->
-{% include 'partials/topside.html' %}
-<!--End Topside-->
 
-<!--Table-->
-<div class="container">
-  <div class="row my-4">
+{% block content %}
+{% include 'partials/topside.html' %}
+<div class="row my-4">
     <div class="col-md-4"></div>
     <div class="col-md-8">
-      <table class="table bg-white">
-        <thead class="bg-info">
-          <tr class="text-white">
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"><a class="btn btn-info btn-sm" href="">View</a></th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row"><a class="btn btn-info btn-sm" href="">View</a></th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row"><a class="btn btn-info btn-sm" href="">View</a></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Odered by</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in order %}
+                <tr>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.name.category }}</td>
+                    <td>{{ order.order_quantity }}</td>
+                    <td>{{ order.customer.username }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-  </div>
 </div>
-<!--End Table-->
+
 {% endblock %}
-<!-- End Content -->

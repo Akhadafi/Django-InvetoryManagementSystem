@@ -1,14 +1,7 @@
 from django.contrib import admin
-from dashboard.models import Product, Order
-
-
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ["name", "category", "quantity"]
-    list_filter = ["category"]
+from .models import Product, Order
 
 
 # Register your models here.
-admin.site.register(Product, ProductAdmin)
+admin.site.register(Product)
 admin.site.register(Order)
-# admin.site.unregister(Group)
-admin.site.site_header = "Khadafi Inventory Dashboard"
